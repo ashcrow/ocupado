@@ -19,7 +19,7 @@ Build script.
 
 import os.path
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
@@ -35,6 +35,7 @@ setup(
     package_dir={
         'ocupado': os.path.join('src', 'ocupado')
     },
+    packages=find_packages('src'),
     entry_points={
         'console_scripts': [
             'ocupado = ocupado.cli:main',
