@@ -1,0 +1,10 @@
+language: python
+python:
+    - "2.7"
+install:
+  - "pip install -r test-requirements.txt"
+script:
+    - "pep8 ."
+    - "python setup.py nosetests --with-coverage --cover-package ocupado --cover-min-percentage=80"
+notifications:
+    email: false
