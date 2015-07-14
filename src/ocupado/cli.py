@@ -17,6 +17,7 @@ Command line interface for ocupado.
 """
 
 import argparse
+import platform
 
 from ocupado import __version__, PluginManager
 from ocupado.config.ini import INIConfig
@@ -26,7 +27,11 @@ def main():
     """
     Handler for the CLI interface.
     """
-    parser = argparse.ArgumentParser(version=__version__)
+    if int(platform.python_version_tuple()[0]) == 2:
+        parser = argparse.ArgumentParser(version=__version__)
+    else:
+        parser = argparse.ArgumentParser()
+
     parser.add_argument(
         'config', metavar='CONFIG', type=str,
         nargs=1, help='Path to the config file.')

@@ -34,9 +34,5 @@ class SMTP(_Output):
         """
         msg = "The following usernames could not be found: %s" % usernames
         server = smtplib.SMTP(self._conf['smtphost'])
-        try:
-            server.sendmail(self._conf['smtpfrom'], self._conf['smtpto'], msg)
-            server.quit()
-        # TODO: Make a wrapper for this kind of exception
-        except smtplib.SMTPException, se:
-            raise se
+        server.sendmail(self._conf['smtpfrom'], self._conf['smtpto'], msg)
+        server.quit()
