@@ -94,7 +94,20 @@ is no support for multiple sources of truth.</p>
 a complete config using the test plugins.</p>
 
 <h2>
-<a id="writing-plugins" class="anchor" href="#writing-plugins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing Plugins</h2>
+<a id="developing-with-ocupado" class="anchor" href="#developing-with-ocupado" aria-hidden="true"><span class="octicon octicon-link"></span></a>Developing with Ocupado</h2>
+
+<h3>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h3>
+
+<p><code>ocupado</code> uses <a href="http://nose.readthedocs.org/en/latest/">nose</a> for unittesting. Do the following to run unittests locally:</p>
+
+<div class="highlight highlight-bash"><pre>python setup.py nosetests</pre></div>
+
+<p>You can also take a peak at the <a href="https://github.com/ashcrow/ocupado/blob/master/.travis.yml#L9">travis file</a> if you'd like to mimick
+the command used in CI.</p>
+
+<h3>
+<a id="writing-plugins" class="anchor" href="#writing-plugins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing Plugins</h3>
 
 <p><code>ocupado</code> provides multiple ways to modify and extend it's usage. However, the most useful way to
 customize the tool is through plugins. Plugins are Python modules which define how to work with an external
@@ -102,8 +115,8 @@ datasource. The module must provide a class which subclasses <a href="https://gi
 
 <p>For an example see the <a href="https://github.com/ashcrow/ocupado/blob/master/src/ocupado/plugin/test.py">test plugin</a>.</p>
 
-<h2>
-<a id="writing-outputs" class="anchor" href="#writing-outputs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing Outputs</h2>
+<h3>
+<a id="writing-outputs" class="anchor" href="#writing-outputs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing Outputs</h3>
 
 <p>Similar to Plugins, outputs provide a way to extend the functionality of <code>ocupado</code> by defining new ways for
 the resulting output to be processed. Just like Plugins, Outputs are Python modules and must define how to
