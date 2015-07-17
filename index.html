@@ -56,6 +56,13 @@ $
 </ul>
 
 <h2>
+<a id="available-outputs" class="anchor" href="#available-outputs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available Outputs</h2>
+
+<ul>
+<li>SMTP (built in)</li>
+</ul>
+
+<h2>
 <a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration</h2>
 
 <p>While the configuration system has been built to allow for future extending a simple INI style
@@ -80,8 +87,25 @@ section name. This section takes <code>key = value</code> pairs which will be pa
 <span class="pl-k">domain</span> = example.org
 <span class="pl-c"># ...</span></pre></div>
 
+<p>Note that the authoritative section specifies the single authoritative data source. There
+is no support for multiple sources of truth.</p>
+
 <p>Check out this <a href="https://github.com/ashcrow/ocupado/blob/master/conf/test.ini">simple example</a> for
 a complete config using the test plugins.</p>
+
+<h2>
+<a id="writing-plugins" class="anchor" href="#writing-plugins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing Plugins</h2>
+
+<p><code>ocupado</code> provides multiple ways to modify and extend it's usage. However, the most useful way to
+customize the tool is through plugins. Plugins are Python modules which define how to work with an external
+datasource. The module must provide a class which subclasses <a href="https://github.com/ashcrow/ocupado/blob/master/src/ocupado/plugin/__init__.py">ocupado.plugin.Plugin</a> and, of course, must be installed on the system for use.</p>
+
+<h2>
+<a id="writing-outputs" class="anchor" href="#writing-outputs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing Outputs</h2>
+
+<p>Similar to Plugins, outputs provide a way to extend the functionality of <code>ocupado</code> by defining new ways for
+the resulting output to be processed. <code>ocupado</code> comes with the SMTP output which can be configured to send
+an email to a list of users noting what users were found to not match the authoritative plugin.</p>
       </section>
     </div>
 
