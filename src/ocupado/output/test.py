@@ -16,10 +16,10 @@
 Test output backend.
 """
 
-from ocupado.output import _Output
+from ocupado.output import Output
 
 
-class Test(_Output):
+class Test(Output):
     """
     Test output backend.
     """

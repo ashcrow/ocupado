@@ -18,10 +18,10 @@ SMTP output backend.
 
 import smtplib
 
-from ocupado.output import _Output
+from ocupado.output import Output
 
 
-class SMTP(_Output):
+class SMTP(Output):
     """
     SMTP output backend.
     """

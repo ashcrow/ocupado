@@ -17,7 +17,7 @@ Output backends
 """
 
 
-class _Output:
+class Output:
     """
     Parent class for all Output backends.
     """
