@@ -28,13 +28,11 @@ class Plugin:
         """
         pass
 
-    def authenticate(self, **kwargs):
+    def authenticate(self):
         """
         Defines how to authenticate via a Plugin.
-
-        :kwargs: Keyword arguments to use with authenticatation.
         """
-        raise NotImplementedError('authenticate(**kwargs) must be implemented')
+        raise NotImplementedError('authenticate() must be implemented')
 
     def logout(self):
         """
