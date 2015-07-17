@@ -106,8 +106,8 @@ datasource. The module must provide a class which subclasses <a href="https://gi
 <a id="writing-outputs" class="anchor" href="#writing-outputs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing Outputs</h2>
 
 <p>Similar to Plugins, outputs provide a way to extend the functionality of <code>ocupado</code> by defining new ways for
-the resulting output to be processed. <code>ocupado</code> comes with the SMTP output which can be configured to send
-an email to a list of users noting what users were found to not match the authoritative plugin.</p>
+the resulting output to be processed. Just like Plugins, Outputs are Python modules and must define how to
+output results.  The module must provide a class which subclasses <a href="https://github.com/ashcrow/ocupado/blob/master/src/ocupado/output/__init__.py">ocupado.output.Output</a> and, of course, must be installed on the system for use.</p>
 
 <p>For an example see the <a href="https://github.com/ashcrow/ocupado/blob/master/src/ocupado/output/smtp.py">SMTP output</a>.</p>
       </section>
