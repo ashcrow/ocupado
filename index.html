@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Ocupado by ashcrow</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ocupado</h1>
+        <h2>Plug-in based user checking tool</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/ashcrow/ocupado/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/ashcrow/ocupado/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/ashcrow/ocupado" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="ocupado" class="anchor" href="#ocupado" aria-hidden="true"><span class="octicon octicon-link"></span></a>ocupado</h1>
+
+<p>Plug-in based tool which checks a user data source against an authoritative source and alerts on any anomalies.</p>
+
+<p><a href="https://travis-ci.org/ashcrow/ocupado/"><img src="https://api.travis-ci.org/ashcrow/ocupado.png" alt="Build Status"></a></p>
+
+<h2>
+<a id="example-usage" class="anchor" href="#example-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Usage</h2>
+
+<pre><code>$ ocupado -V conf/test.ini
+- Plugins loaded: ['ocupado.plugin.test:Test']
+- Plugins initialized: ['ocupado.plugin.test:Test']
+- Getting users for plugin ocupado.plugin.test:Test
+- Could not find user example in the authoritative plugin
+- Notifying via ocupado.output.test:Test for: ['example']
+$
+</code></pre>
+
+<h2>
+<a id="available-plugins" class="anchor" href="#available-plugins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available Plugins</h2>
+
+<ul>
+<li><a href="https://github.com/ashcrow/ocupado_plugin_ldap">LDAP</a></li>
+<li><a href="https://github.com/ashcrow/ocupado_plugin_google_groups">GoogleGroups</a></li>
+</ul>
+
+<h2>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration</h2>
+
+<p>While the configuration system has been built to allow for future extending a simple INI style
+configuration is shipped and shown in examples.</p>
+
+<h3>
+<a id="ini-sections" class="anchor" href="#ini-sections" aria-hidden="true"><span class="octicon octicon-link"></span></a>INI Sections</h3>
+
+<p>There are three required sections: plugin, output, and authoritative. Each uses the same
+format and expects a list of <code>module = class</code> like so:</p>
+
+<div class="highlight highlight-ini"><pre><span class="pl-en">[plugin]</span>
+<span class="pl-k">my.plugin.module</span> = PluginClass
+<span class="pl-k">another.plugin.module</span> = AnotherClass</pre></div>
+
+<p>Each <code>module = class</code> is configured with it's <em>own section</em> using the the module as the
+section name. This section takes <code>key = value</code> pairs which will be passed to a plugin's
+<code>__init__</code>. For instance, to configure <code>my.plugin.module = PluginClass</code> above:</p>
+
+<div class="highlight highlight-ini"><pre><span class="pl-en">[my.plugin.module]</span>
+<span class="pl-k">username</span> = user
+<span class="pl-k">domain</span> = example.org
+<span class="pl-c"># ...</span></pre></div>
+
+<p>Check out this <a href="https://github.com/ashcrow/ocupado/blob/master/conf/test.ini">simple example</a> for
+a complete config using the test plugins.</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
