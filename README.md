@@ -17,6 +17,7 @@ $
 ## Available Plugins
 * [LDAP](https://github.com/ashcrow/ocupado_plugin_ldap)
 * [GoogleGroups](https://github.com/ashcrow/ocupado_plugin_google_groups)
+* [GoogleGroupsFree](https://github.com/ashcrow/ocupado_plugin_google_groups_free)
 
 ## Available Outputs
 * SMTP (built in)
