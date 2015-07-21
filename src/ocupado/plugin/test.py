@@ -46,7 +46,7 @@ class Test(Plugin):
 
         :userid: The userid to check.
         """
-        if userid == 'test':
+        if userid in self.get_all_usernames():
             return True, {"exists": True, "details": {"username": userid}}
         return False, {'exists': False, 'details': {'username': userid}}
 
