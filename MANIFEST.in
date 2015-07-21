@@ -2,3 +2,4 @@ include AUTHORS COPYING LICENSE README.md test-requirements.txt
 graft conf
 graft src/ocupado
 graft test
+graft docs
