@@ -59,6 +59,9 @@ def main():
     # Run through all the plugin instances looking for users
     for name in plugin_manager.instances:
         if args.verbose:
+            print('- Authenticating for plugin %s' % name)
+        plugin_manager.instances[name].authenticate()
+        if args.verbose:
             print('- Getting users for plugin %s' % name)
         for username in plugin_manager.instances[name].get_all_usernames():
             exists, details = plugin_manager.authoritative_instance.exists(
