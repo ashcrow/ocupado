@@ -73,6 +73,11 @@ def main():
                         'plugin' % username)
                 unmatched.append(username)
 
+        # Be nice citizens and logout
+        if args.verbose:
+            print('- Logging out of plugin %s' % name)
+        plugin_manager.instances[name].logout()
+
     # Output the results through an output plugin
     for output_name in plugin_manager.output_instances:
         print('- Notifying via %s for: %s' % (output_name, unmatched))
