@@ -89,6 +89,6 @@ class INIConfig(_Config):
         result = {}
         module_name, class_name = self._cp.items('authoritative')[0]
         result[module_name] = {'class': class_name, 'kwargs': {}}
-        for k, v in self._cp.items(module_name):
+        for k, v in self._cp.items('authoritative_kwargs'):
             result[module_name]['kwargs'][k] = v
         return result
