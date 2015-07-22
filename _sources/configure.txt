@@ -46,7 +46,7 @@ And there is also one optional section:
 
    [ignored_users]
    admin_account =
-   ignorethisonotoo =
+   ignorethisonetoo =
    # ...
 
 Check out this `simple example <https://github.com/ashcrow/ocupado/blob/master/conf/test.ini>`_ for
