@@ -69,6 +69,16 @@ section name. This section takes <code class="docutils literal"><span class="pre
 <p class="first admonition-title">Note</p>
 <p class="last">The authoritative section specifies the single authoritative data source. There is no support for multiple sources of truth.</p>
 </div>
+<p>And there is also one optional section:</p>
+<ul class="simple">
+<li>ignored_users: username as key (values ignored)</li>
+</ul>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[ignored_users]</span>
+<span class="na">admin_account</span> <span class="o">=</span>
+<span class="na">ignorethisonotoo</span> <span class="o">=</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
 <p>Check out this <a class="reference external" href="https://github.com/ashcrow/ocupado/blob/master/conf/test.ini">simple example</a> for
 a complete config using the test plugins.</p>
 </div>
