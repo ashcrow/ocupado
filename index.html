@@ -1,131 +1,136 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ocupado &mdash; ocupado 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ocupado 0.0.1 documentation" href="#" />
+    <link rel="next" title="Installing" href="install.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <title>Ocupado by ashcrow</title>
   </head>
+  <body role="document">  
 
-  <body>
-
-    <header>
-      <div class="container">
-        <h1>Ocupado</h1>
-        <h2>Plug-in based user checking tool</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/ashcrow/ocupado/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/ashcrow/ocupado/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/ashcrow/ocupado" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h1>
-<a id="ocupado" class="anchor" href="#ocupado" aria-hidden="true"><span class="octicon octicon-link"></span></a>ocupado</h1>
-
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ocupado">
+<h1>ocupado<a class="headerlink" href="#ocupado" title="Permalink to this headline">¶</a></h1>
 <p>Plug-in based tool which checks a user data source against an authoritative source and alerts on any anomalies.</p>
-
-<p><a href="https://travis-ci.org/ashcrow/ocupado/"><img src="https://api.travis-ci.org/ashcrow/ocupado.png" alt="Build Status"></a></p>
-
-<h2>
-<a id="example-usage" class="anchor" href="#example-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Usage</h2>
-
-<pre><code>$ ocupado -V conf/test.ini
-- Plugins loaded: ['ocupado.plugin.test:Test']
-- Plugins initialized: ['ocupado.plugin.test:Test']
-- Getting users for plugin ocupado.plugin.test:Test
-- Could not find user example in the authoritative plugin
-- Notifying via ocupado.output.test:Test for: ['example']
-$
-</code></pre>
-
-<h2>
-<a id="available-plugins" class="anchor" href="#available-plugins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available Plugins</h2>
-
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
 <ul>
-<li><a href="https://github.com/ashcrow/ocupado_plugin_ldap">LDAP</a></li>
-<li><a href="https://github.com/ashcrow/ocupado_plugin_google_groups">GoogleGroups</a></li>
-<li><a href="https://github.com/ashcrow/ocupado_plugin_google_groups_free">GoogleGroupsFree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#adding-plugins">Adding Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 </ul>
-
-<h2>
-<a id="available-outputs" class="anchor" href="#available-outputs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available Outputs</h2>
-
+</div>
+</div>
+<div class="section" id="development">
+<h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
 <ul>
-<li>SMTP (built in)</li>
+<li class="toctree-l1"><a class="reference internal" href="writing_plugins.html">Writing Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing_outputs.html">Writing Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">Developer API</a></li>
 </ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span>Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span>Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span>Search Page</span></a></li>
+</ul>
+</div>
+</div>
 
-<h2>
-<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration</h2>
 
-<p>While the configuration system has been built to allow for future extending a simple INI style
-configuration is shipped and shown in examples.</p>
-
-<h3>
-<a id="ini-sections" class="anchor" href="#ini-sections" aria-hidden="true"><span class="octicon octicon-link"></span></a>INI Sections</h3>
-
-<p>There are three required sections: plugin, output, and authoritative. Each uses the same
-format and expects a list of <code>module = class</code> like so:</p>
-
-<div class="highlight highlight-ini"><pre><span class="pl-en">[plugin]</span>
-<span class="pl-k">my.plugin.module</span> = PluginClass
-<span class="pl-k">another.plugin.module</span> = AnotherClass</pre></div>
-
-<p>Each <code>module = class</code> is configured with it's <em>own section</em> using the the module as the
-section name. This section takes <code>key = value</code> pairs which will be passed to a plugin's
-<code>__init__</code>. For instance, to configure <code>my.plugin.module = PluginClass</code> above:</p>
-
-<div class="highlight highlight-ini"><pre><span class="pl-en">[my.plugin.module]</span>
-<span class="pl-k">username</span> = user
-<span class="pl-k">domain</span> = example.org
-<span class="pl-c"># ...</span></pre></div>
-
-<p>Note that the authoritative section specifies the single authoritative data source. There
-is no support for multiple sources of truth.</p>
-
-<p>Check out this <a href="https://github.com/ashcrow/ocupado/blob/master/conf/test.ini">simple example</a> for
-a complete config using the test plugins.</p>
-
-<h2>
-<a id="developing-with-ocupado" class="anchor" href="#developing-with-ocupado" aria-hidden="true"><span class="octicon octicon-link"></span></a>Developing with Ocupado</h2>
-
-<h3>
-<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h3>
-
-<p><code>ocupado</code> uses <a href="http://nose.readthedocs.org/en/latest/">nose</a> for unittesting. Do the following to run unittests locally:</p>
-
-<div class="highlight highlight-bash"><pre>python setup.py nosetests</pre></div>
-
-<p>You can also take a peak at the <a href="https://github.com/ashcrow/ocupado/blob/master/.travis.yml#L9">travis file</a> if you'd like to mimick
-the command used in CI.</p>
-
-<h3>
-<a id="writing-plugins" class="anchor" href="#writing-plugins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing Plugins</h3>
-
-<p><code>ocupado</code> provides multiple ways to modify and extend it's usage. However, the most useful way to
-customize the tool is through plugins. Plugins are Python modules which define how to work with an external
-datasource. The module must provide a class which subclasses <a href="https://github.com/ashcrow/ocupado/blob/master/src/ocupado/plugin/__init__.py">ocupado.plugin.Plugin</a> and, of course, must be installed on the system for use.</p>
-
-<p>For an example see the <a href="https://github.com/ashcrow/ocupado/blob/master/src/ocupado/plugin/test.py">test plugin</a>.</p>
-
-<h3>
-<a id="writing-outputs" class="anchor" href="#writing-outputs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing Outputs</h3>
-
-<p>Similar to Plugins, outputs provide a way to extend the functionality of <code>ocupado</code> by defining new ways for
-the resulting output to be processed. Just like Plugins, Outputs are Python modules and must define how to
-output results.  The module must provide a class which subclasses <a href="https://github.com/ashcrow/ocupado/blob/master/src/ocupado/output/__init__.py">ocupado.output.Output</a> and, of course, must be installed on the system for use.</p>
-
-<p>For an example see the <a href="https://github.com/ashcrow/ocupado/blob/master/src/ocupado/output/smtp.py">SMTP output</a>.</p>
-      </section>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ocupado</a><ul>
+<li><a class="reference internal" href="#contents">Contents</a></li>
+<li><a class="reference internal" href="#development">Development</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="install.html" title="next chapter">Installing</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
     </div>
+    <div class="footer">
+      &copy;2015, Steve Milner.
+      
+      |
+      <a href="_sources/index.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/ashcrow/ocupado" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
 
     
   </body>

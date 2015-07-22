@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuration &mdash; ocupado 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ocupado 0.0.1 documentation" href="index.html" />
+    <link rel="next" title="Usage" href="usage.html" />
+    <link rel="prev" title="Installing" href="install.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="configuration">
+<span id="id1"></span><h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>While the configuration system has been built to allow for future extending a simple INI style
+configuration is shipped and shown in examples.</p>
+<div class="section" id="ini-sections">
+<h2>INI Sections<a class="headerlink" href="#ini-sections" title="Permalink to this headline">¶</a></h2>
+<p>There are three required sections:</p>
+<ul class="simple">
+<li>plugin: The user data sources.</li>
+<li>output: Where the resulting data flows out from.</li>
+<li>authoritative: A special user data source that acts as the source of truth.</li>
+</ul>
+<p>Each uses the same format and expects a list of <code class="docutils literal"><span class="pre">module</span> <span class="pre">=</span> <span class="pre">class</span></code> like so:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[plugin]</span>
+<span class="na">my.plugin.module</span> <span class="o">=</span> <span class="s">PluginClass</span>
+<span class="na">another.plugin.module</span> <span class="o">=</span> <span class="s">AnotherClass</span>
+</pre></div>
+</div>
+<p>Each <code class="docutils literal"><span class="pre">module</span> <span class="pre">=</span> <span class="pre">class</span></code> is configured with it&#8217;s <em>own section</em> using the the module as the
+section name. This section takes <code class="docutils literal"><span class="pre">key</span> <span class="pre">=</span> <span class="pre">value</span></code> pairs which will be passed to a plugin&#8217;s
+<code class="docutils literal"><span class="pre">__init__</span></code>. For instance, to configure <code class="docutils literal"><span class="pre">my.plugin.module</span> <span class="pre">=</span> <span class="pre">PluginClass</span></code> above:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[my.plugin.module]</span>
+<span class="na">username</span> <span class="o">=</span> <span class="s">user</span>
+<span class="na">domain</span> <span class="o">=</span> <span class="s">example.org</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The authoritative section specifies the single authoritative data source. There is no support for multiple sources of truth.</p>
+</div>
+<p>Check out this <a class="reference external" href="https://github.com/ashcrow/ocupado/blob/master/conf/test.ini">simple example</a> for
+a complete config using the test plugins.</p>
+</div>
+<div class="section" id="next">
+<h2>Next<a class="headerlink" href="#next" title="Permalink to this headline">¶</a></h2>
+<p>Now it&#8217;s time to <a class="reference internal" href="usage.html#usage"><span>use ocupado</span></a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Configuration</a><ul>
+<li><a class="reference internal" href="#ini-sections">INI Sections</a></li>
+<li><a class="reference internal" href="#next">Next</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="install.html" title="previous chapter">Installing</a></li>
+      <li>Next: <a href="usage.html" title="next chapter">Usage</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/configure.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Steve Milner.
+      
+      |
+      <a href="_sources/configure.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/ashcrow/ocupado" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

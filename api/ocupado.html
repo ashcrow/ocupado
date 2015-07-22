@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ocupado package &mdash; ocupado 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="ocupado 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="ocupado" href="modules.html" />
+    <link rel="next" title="ocupado.config package" href="ocupado.config.html" />
+    <link rel="prev" title="ocupado" href="modules.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ocupado-package">
+<h1>ocupado package<a class="headerlink" href="#ocupado-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ocupado.config.html">ocupado.config package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ocupado.config.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ocupado.config.html#module-ocupado.config.ini">ocupado.config.ini module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ocupado.config.html#module-ocupado.config">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ocupado.output.html">ocupado.output package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ocupado.output.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ocupado.output.html#module-ocupado.output.smtp">ocupado.output.smtp module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ocupado.output.html#module-ocupado.output.test">ocupado.output.test module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ocupado.output.html#module-ocupado.output">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ocupado.plugin.html">ocupado.plugin package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ocupado.plugin.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ocupado.plugin.html#module-ocupado.plugin.test">ocupado.plugin.test module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ocupado.plugin.html#module-ocupado.plugin">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-ocupado.cli">
+<span id="ocupado-cli-module"></span><h2>ocupado.cli module<a class="headerlink" href="#module-ocupado.cli" title="Permalink to this headline">¶</a></h2>
+<p>Command line interface for ocupado.</p>
+<dl class="function">
+<dt id="ocupado.cli.main">
+<code class="descclassname">ocupado.cli.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ocupado.cli.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handler for the CLI interface.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-ocupado">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ocupado" title="Permalink to this headline">¶</a></h2>
+<p>Pluggable CLI tool that checks external accounts with an internal source</p>
+<dl class="class">
+<dt id="ocupado.PluginManager">
+<em class="property">class </em><code class="descclassname">ocupado.</code><code class="descname">PluginManager</code><a class="headerlink" href="#ocupado.PluginManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>PluginLoader is in charge of loading a all types of plugins for use.</p>
+<dl class="attribute">
+<dt id="ocupado.PluginManager.authoritative">
+<code class="descname">authoritative</code><a class="headerlink" href="#ocupado.PluginManager.authoritative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for authoritative plugin recipe</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ocupado.PluginManager.authoritative_instance">
+<code class="descname">authoritative_instance</code><a class="headerlink" href="#ocupado.PluginManager.authoritative_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for authoritative plugin use</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ocupado.PluginManager.instances">
+<code class="descname">instances</code><a class="headerlink" href="#ocupado.PluginManager.instances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for plugin instances for usage</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ocupado.PluginManager.load_dict">
+<code class="descname">load_dict</code><span class="sig-paren">(</span><em>dct</em><span class="sig-paren">)</span><a class="headerlink" href="#ocupado.PluginManager.load_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads plugins from a list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dct</strong> (<em>dict</em>) &#8211; Dictionary of plugins with (mod, cls)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ocupado.PluginManager.output_instances">
+<code class="descname">output_instances</code><a class="headerlink" href="#ocupado.PluginManager.output_instances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for outputs instances for usage</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ocupado.PluginManager.outputs">
+<code class="descname">outputs</code><a class="headerlink" href="#ocupado.PluginManager.outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for output recipes</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ocupado.PluginManager.plugins">
+<code class="descname">plugins</code><a class="headerlink" href="#ocupado.PluginManager.plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for plugin creation recipes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ocupado.PluginManager.set_up_authoritative">
+<code class="descname">set_up_authoritative</code><span class="sig-paren">(</span><em>dct</em><span class="sig-paren">)</span><a class="headerlink" href="#ocupado.PluginManager.set_up_authoritative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up a specific authoritative plugin for use.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dct</strong> (<em>dict</em>) &#8211; Dictionary of plugins with (mod, cls)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ocupado.PluginManager.set_up_outputs">
+<code class="descname">set_up_outputs</code><span class="sig-paren">(</span><em>dct</em><span class="sig-paren">)</span><a class="headerlink" href="#ocupado.PluginManager.set_up_outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up a specific output plugins for use.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dct</strong> (<em>dict</em>) &#8211; Dictionary of plugins with (mod, cls)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ocupado.PluginManager.set_up_plugin">
+<code class="descname">set_up_plugin</code><span class="sig-paren">(</span><em>plugin_name</em>, <em>kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ocupado.PluginManager.set_up_plugin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up a specific plugin for use.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>plugin_name</strong> (<em>str</em>) &#8211; The full name of the plugin to set up</li>
+<li><strong>kwargs</strong> (<em>str</em>) &#8211; The keyword arguments to pass to the plugin</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ocupado.PluginManager.set_up_plugins">
+<code class="descname">set_up_plugins</code><span class="sig-paren">(</span><em>dct</em><span class="sig-paren">)</span><a class="headerlink" href="#ocupado.PluginManager.set_up_plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up a plugins for use.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dct</strong> (<em>dict</em>) &#8211; Dictionary of plugins with (mod, cls)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ocupado package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-ocupado.cli">ocupado.cli module</a></li>
+<li><a class="reference internal" href="#module-ocupado">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">ocupado</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">ocupado</a></li>
+      <li>Next: <a href="ocupado.config.html" title="next chapter">ocupado.config package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/ocupado.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Steve Milner.
+      
+      |
+      <a href="../_sources/api/ocupado.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/ashcrow/ocupado" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installing &mdash; ocupado 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ocupado 0.0.1 documentation" href="index.html" />
+    <link rel="next" title="Configuration" href="configure.html" />
+    <link rel="prev" title="ocupado" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="installing">
+<span id="installation"></span><h1>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pip">
+<h2>pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> makes installing Python source and their dependencies a breeze and is the
+recommended way of installing <code class="docutils literal"><span class="pre">ocupado</span></code>.</p>
+<div class="highlight-shell"><div class="highlight"><pre><span class="nv">$ </span>pip install https://github.com/ashcrow/ocupado
+</pre></div>
+</div>
+</div>
+<div class="section" id="traditional">
+<h2>Traditional<a class="headerlink" href="#traditional" title="Permalink to this headline">¶</a></h2>
+<p>The traditional way to install Python code is via the <code class="docutils literal"><span class="pre">setup.py</span></code> command that comes with the source code.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You will need to resolve dependencies manually upon installation.</p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./setup.py install
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-plugins">
+<h1>Adding Plugins<a class="headerlink" href="#adding-plugins" title="Permalink to this headline">¶</a></h1>
+<p>On it&#8217;s own <code class="docutils literal"><span class="pre">ocupado</span></code> doesn&#8217;t do much more than provide a framework for user data sources.
+Installing plugins allows for integration with external data sources. Using either the
+above <code class="docutils literal"><span class="pre">pip</span></code> or <code class="docutils literal"><span class="pre">traditional</span></code> method of installtion should work for the following plugins:</p>
+<div class="section" id="available-plugins">
+<h2>Available Plugins<a class="headerlink" href="#available-plugins" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/ashcrow/ocupado_plugin_ldap">LDAP</a></li>
+<li><a class="reference external" href="https://github.com/ashcrow/ocupado_plugin_google_groups">GoogleGroups</a></li>
+<li><a class="reference external" href="https://github.com/ashcrow/ocupado_plugin_google_groups_free">GoogleGroupsFree</a></li>
+</ul>
+</div>
+<div class="section" id="next">
+<h2>Next<a class="headerlink" href="#next" title="Permalink to this headline">¶</a></h2>
+<p>The next step is to make a <a class="reference internal" href="configure.html#configuration"><span>configuration</span></a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installing</a><ul>
+<li><a class="reference internal" href="#pip">pip</a></li>
+<li><a class="reference internal" href="#traditional">Traditional</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adding-plugins">Adding Plugins</a><ul>
+<li><a class="reference internal" href="#available-plugins">Available Plugins</a></li>
+<li><a class="reference internal" href="#next">Next</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">ocupado</a></li>
+      <li>Next: <a href="configure.html" title="next chapter">Configuration</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/install.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Steve Milner.
+      
+      |
+      <a href="_sources/install.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/ashcrow/ocupado" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
