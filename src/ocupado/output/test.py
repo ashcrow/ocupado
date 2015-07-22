@@ -28,6 +28,6 @@ class Test(Output):
         """
         Implements notification for non matching users.
 
-        :usernames: list of usernames which do not match.
+        :param list usernames: list of usernames which do not match.
         """
         pass

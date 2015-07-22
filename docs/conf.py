@@ -32,8 +32,16 @@ exclude_patterns = ['_build']
 pygments_style = 'sphinx'
 todo_include_todos = False
 
-html_theme = 'nature'
-# html_theme_options = {}
+html_theme = 'alabaster'
+html_theme_options = {
+    'github_user': 'ashcrow',
+    'github_repo': 'ocupado',
+    'github_banner': True,
+    'github_button': True,
+    'travis_button': True,
+    'show_powered_by': False,
+    'page_width': '80%',
+}
 # html_theme_path = []
 # html_title = None
 # html_short_title = None

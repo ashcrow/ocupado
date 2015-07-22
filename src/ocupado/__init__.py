@@ -39,8 +39,8 @@ class PluginManager:
         """
         Loads a plugin.
 
-        :module_name: The name of the module. Example: some.name.like.this
-        :class_name: The name of the class. Example: MyPlugin
+        :param str module_name: The name of the module. Example: like.this.str
+        :param str class_name: The name of the class. Example: MyPlugin
         """
         mod = __import__(
             module_name, fromlist=['True'], globals=globals(), locals=locals())
@@ -51,8 +51,8 @@ class PluginManager:
         """
         Sets up a specific plugin for use.
 
-        :plugin_name: The full name of the plugin to set up
-        :kwargs: The keyword arguments to pass to the plugin
+        :param str plugin_name: The full name of the plugin to set up
+        :param str kwargs: The keyword arguments to pass to the plugin
         """
         self._instances[plugin_name] = self._plugins[plugin_name](**kwargs)
 
@@ -60,7 +60,7 @@ class PluginManager:
         """
         Sets up a plugins for use.
 
-        :dct: Dictionary describing plugins as returned by _Config
+        :param dict dct: Dictionary of plugins with (mod, cls)
         """
         for module_name, conf in dct.items():
             plugin_name = module_name + ':' + conf['class']
@@ -70,7 +70,7 @@ class PluginManager:
         """
         Loads plugins from a list.
 
-        :plugin: list of plugins with (mod, cls)
+        :param dict dct: Dictionary of plugins with (mod, cls)
         """
         for module_name, conf in dct.items():
             self._load_plugin(module_name, conf['class'])
@@ -79,8 +79,7 @@ class PluginManager:
         """
         Sets up a specific authoritative plugin for use.
 
-        :plugin_name: The full name of the plugin to set up
-        :kwargs: The keyword arguments to pass to the plugin
+        :param dict dct: Dictionary of plugins with (mod, cls)
         """
         for module_name, conf in dct.items():
             mod = __import__(
@@ -93,6 +92,8 @@ class PluginManager:
     def set_up_outputs(self, dct):
         """
         Sets up a specific output plugins for use.
+
+        :param dict dct: Dictionary of plugins with (mod, cls)
         """
         for module_name, conf in dct.items():
             mod = __import__(
@@ -104,9 +105,15 @@ class PluginManager:
             self._output_instances[plugin_name] = cls(**conf['kwargs'])
 
     # Read-only properties
+    #: Property for plugin creation recipes
     plugins = property(lambda s: s._plugins)
+    #: Property for plugin instances for usage
     instances = property(lambda s: s._instances)
+    #: Property for authoritative plugin recipe
     authoritative = property(lambda s: s._authoritative)
+    #: Property for authoritative plugin use
     authoritative_instance = property(lambda s: s._authoritative_instance)
+    #: Property for output recipes
     outputs = property(lambda s: s._outputs)
+    #: Property for outputs instances for usage
     output_instances = property(lambda s: s._output_instances)

@@ -30,7 +30,7 @@ class SMTP(Output):
         """
         Implements notification for non matching users.
 
-        :usernames: list of usernames which do not match.
+        :param list usernames: list of usernames which do not match.
         """
         msg = "The following usernames could not be found: %s" % usernames
         server = smtplib.SMTP(self._conf['smtphost'])

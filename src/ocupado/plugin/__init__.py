@@ -25,6 +25,8 @@ class Plugin:
     def __init__(self, **kwargs):
         """
         Creates an instance of a Plugin.
+
+        :param dict kwargs: All keyword arguments for use in the plugin.
         """
         pass
 
@@ -44,15 +46,21 @@ class Plugin:
         """
         Checks for the existance of a user.
 
-        :userid: The userid to check.
+        :param str userid: The userid to check.
+        :return: Boolean and extra information
+        :rtype: tuple(bool, dict)
         """
         raise NotImplementedError('exists(userid) must be implemented')
 
     def get_all_usernames(self):
         """
-        Returns **all** user names.
+        Returns *all* user names.
+
+        :return: A list of all users known to the backend.
+        :rtype: list
         """
         raise NotImplementedError('get_all_users() must be implemented')
 
     # Read-only properties
+    #: Property returning all users
     users = property(lambda s: s.get_all_usernames())

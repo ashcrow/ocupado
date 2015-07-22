@@ -26,7 +26,7 @@ class Output:
         """
         Creates an instance of _Output.
 
-        :kwargs: All keyword arguments for use in in notify()
+        :param dict kwargs: All keyword arguments for use in notify()
         """
         self._conf = kwargs
 
@@ -34,6 +34,6 @@ class Output:
         """
         Implements notification for non matching users.
 
-        :usernames: list of usernames which do not match.
+        :param list usernames: list of usernames which do not match.
         """
         raise NotImplementedError("notify(usernames) must be implemented")

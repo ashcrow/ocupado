@@ -34,7 +34,7 @@ class INIConfig(_Config):
         """
         Creates an INIConfig instance.
 
-        :location: Location of the ini file.
+        :param str location: Location of the ini file.
         """
         _Config.__init__(self, location)
         self._cp = configparser.ConfigParser()
@@ -50,7 +50,9 @@ class INIConfig(_Config):
         """
         Enables getting of items with d[k] format.
 
-        :name: The name of the section to get.
+        :param str name: The name of the section to get.
+        :return str: The item at d[k]
+        :raises KeyError: If the item does not exist.
         """
         try:
             return self._cp.items(name)
@@ -61,7 +63,8 @@ class INIConfig(_Config):
         """
         Shared code for listing items.
 
-        :type: The section to list.
+        :param str type: The section to list.
+        :return dict: Dictionary describing a section of the config.
         """
         kind = {}
         for mod, cls in self._cp.items(type):
@@ -73,18 +76,25 @@ class INIConfig(_Config):
     def list_plugins(self):
         """
         Gets all plugin configurations.
+
+        :return dict: Dictionary of the plugins.
         """
         return self._list('plugin')
 
     def list_outputs(self):
         """
         Gets all output configurations.
+
+        :return: Dictionary of the outputs.
+        :rtype: dict
         """
         return self._list('output')
 
     def get_authoritative(self):
         """
         Return the authoritative plugin.
+
+        :return dict: Dictionary of the authoritative plugin.
         """
         result = {}
         module_name, class_name = self._cp.items('authoritative')[0]

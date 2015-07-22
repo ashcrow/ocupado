@@ -26,7 +26,7 @@ class _Config:
         """
         Creates an instance of _Config.
 
-        :location: Location of the configuration provider.
+        :param str location: Location of the configuration provider.
         """
         self._location = location
 
@@ -40,7 +40,9 @@ class _Config:
         """
         Enables getting of items with d[k] format.
 
-        :name: The name of the section to get.
+        :param str name: The name of the section to get.
+        :return str: The item at d[k]
+        :raises KeyError: If the item does not exist.
         """
         raise NotImplementedError(
             '__getitem__(name) must be implemented')
@@ -48,22 +50,31 @@ class _Config:
     def list_plugins(self):
         """
         Gets all plugin configurations.
+
+        :return dict: Dictionary of the plugins.
         """
         raise NotImplementedError('list_plugins() must be implemented')
 
     def list_outputs(self):
         """
         Gets all output configurations.
+
+        :return dict: Dictionary of the outputs.
         """
         raise NotImplementedError('list_outputs() must be implemented')
 
     def get_authoritative(self):
         """
         Return the authoritative plugin.
+
+        :return dict: Dictionary of the authoritative plugin.
         """
         raise NotImplementedError('get_authoritative() must be implemented')
 
     # Read-only properties
+    #: Property showing all plugins.
     plugins = property(lambda s: s.list_plugins())
+    #: Property showing all outputs.
     outputs = property(lambda s: s.list_outputs())
+    #: Property showing the authoritative plugin.
     authoritative = property(lambda s: s.get_authoritative())

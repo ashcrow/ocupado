@@ -12,31 +12,35 @@
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-'''
+"""
 A simple test plugin.
-'''
+"""
+
 from ocupado.plugin import Plugin
 
 
 class Test(Plugin):
+    """
+    A simple test plugin for testing.
+    """
 
     def __init__(self, key):
         """
         Creates an instance of a Plugin.
+
+        :param str key: A dummy input used for testing.
         """
         pass
 
-    def authenticate(self, **kwargs):
+    def authenticate(self):
         """
-        Defines how to authenticate via a Plugin.
-
-        :kwargs: Keyword arguments to use with authenticatation.
+        Defines how to authenticate via the Test plugin.
         """
         pass
 
     def logout(self):
         """
-        Defines how to logout via a Plugin.
+        Defines how to logout via the Test plugin.
         """
         pass
 
@@ -44,7 +48,9 @@ class Test(Plugin):
         """
         Checks for the existance of a user.
 
-        :userid: The userid to check.
+        :param str userid: The userid to check.
+        :return: Boolean and extra information
+        :rtype: tuple(bool, dict)
         """
         if userid in self.get_all_usernames():
             return True, {"exists": True, "details": {"username": userid}}
@@ -52,6 +58,9 @@ class Test(Plugin):
 
     def get_all_usernames(self):
         """
-        Returns **all** user names.
+        Returns *all* user names.
+
+        :return: A list of all users known to the backend.
+        :rtype: list
         """
         return ['test', 'example']
