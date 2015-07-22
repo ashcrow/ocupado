@@ -54,3 +54,14 @@ class TestINIConfig(unittest.TestCase):
             {'ocupado.plugin.test': {
                 'class': 'Test',
                 'kwargs': {'key': 'value'}}})
+
+    def test_ini_config_load_ignored_users(self):
+        cfg = INIConfig('conf/test.ini')
+        self.assertIsNone(cfg.load_ignored_users())
+        self.assertEquals(cfg.ignored_users, ['ignoreme'])
+
+    def test_ini_config_load_ignored_users_with_no_section(self):
+        cfg = INIConfig('conf/test.ini')
+        cfg._cp.remove_section('ignored_users')
+        self.assertIsNone(cfg.load_ignored_users())
+        self.assertEquals(cfg.ignored_users, [])

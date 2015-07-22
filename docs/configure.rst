@@ -38,6 +38,17 @@ section name. This section takes ``key = value`` pairs which will be passed to a
    
    The authoritative section specifies the single authoritative data source. There is no support for multiple sources of truth.
 
+And there is also one optional section:
+
+* ignored_users: username as key (values ignored)
+
+.. code-block:: ini
+
+   [ignored_users]
+   admin_account =
+   ignorethisonetoo =
+   # ...
+
 Check out this `simple example <https://github.com/ashcrow/ocupado/blob/master/conf/test.ini>`_ for
 a complete config using the test plugins.
 

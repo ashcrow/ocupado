@@ -29,6 +29,7 @@ class _Config:
         :param str location: Location of the configuration provider.
         """
         self._location = location
+        self._ignored_users = []
 
     def reload(self):
         """
@@ -71,7 +72,23 @@ class _Config:
         """
         raise NotImplementedError('get_authoritative() must be implemented')
 
+    def load_ignored_users(self):
+        """
+        Loads ignored users from a config.
+        """
+        raise NotImplementedError('load_ignored_users() must be implemented')
+
+    def ignore_user(self, userid):
+        """
+        Adds a username to the list to ignore.
+
+        :param str userid: A username to ignore
+        """
+        self._ignored_users.append(userid)
+
     # Read-only properties
+    #: Property listing all ignored users
+    ignored_users = property(lambda s: s._ignored_users)
     #: Property showing all plugins.
     plugins = property(lambda s: s.list_plugins())
     #: Property showing all outputs.

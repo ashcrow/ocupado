@@ -42,6 +42,7 @@ def main():
     args = parser.parse_args()
 
     conf = INIConfig(args.config[0])
+    conf.load_ignored_users()
 
     # Load plugins for use
     plugin_manager = PluginManager()
@@ -64,24 +65,32 @@ def main():
         if args.verbose:
             print('- Getting users for plugin %s' % name)
         for username in plugin_manager.instances[name].get_all_usernames():
-            exists, details = plugin_manager.authoritative_instance.exists(
-                username)
-            if exists is False:
+            if username not in conf.ignored_users:
+                exists, details = plugin_manager.authoritative_instance.exists(
+                    username)
+                if exists is False:
+                    if args.verbose:
+                        print(
+                            '- Could not find user %s in the authoritative '
+                            'plugin' % username)
+                    unmatched.append(username)
+            else:
                 if args.verbose:
                     print(
-                        '- Could not find user %s in the authoritative '
-                        'plugin' % username)
-                unmatched.append(username)
+                        '- User %s is in the ignored list.' % username)
 
         # Be nice citizens and logout
         if args.verbose:
             print('- Logging out of plugin %s' % name)
         plugin_manager.instances[name].logout()
 
-    # Output the results through an output plugin
-    for output_name in plugin_manager.output_instances:
-        print('- Notifying via %s for: %s' % (output_name, unmatched))
-        plugin_manager.output_instances[output_name].notify(unmatched)
+    if unmatched:
+        # Output the results through an output plugin
+        for output_name in plugin_manager.output_instances:
+            print('- Notifying via %s for: %s' % (output_name, unmatched))
+            plugin_manager.output_instances[output_name].notify(unmatched)
+    else:
+        print('- No unmatched users.')
 
 
 if __name__ == '__main__':

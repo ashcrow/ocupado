@@ -102,3 +102,11 @@ class INIConfig(_Config):
         for k, v in self._cp.items('authoritative_kwargs'):
             result[module_name]['kwargs'][k] = v
         return result
+
+    def load_ignored_users(self):
+        """
+        Loads ignored users from an ini config.
+        """
+        if self._cp.has_section('ignored_users'):
+            for userid, _ in self._cp.items('ignored_users'):
+                self.ignore_user(userid)
