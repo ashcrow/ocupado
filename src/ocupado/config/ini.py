@@ -70,6 +70,8 @@ class INIConfig(_Config):
         for mod, cls in self._cp.items(type):
             kind[mod] = {'class': cls, 'kwargs': {}}
             for k, v in self._cp.items(mod):
+                if ',' in v:
+                    v = v.split(',')
                 kind[mod]['kwargs'][k] = v
             return kind
 
@@ -100,6 +102,8 @@ class INIConfig(_Config):
         module_name, class_name = self._cp.items('authoritative')[0]
         result[module_name] = {'class': class_name, 'kwargs': {}}
         for k, v in self._cp.items('authoritative_kwargs'):
+            if ',' in v:
+                v = v.split(',')
             result[module_name]['kwargs'][k] = v
         return result
 

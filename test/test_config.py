@@ -45,7 +45,7 @@ class TestINIConfig(unittest.TestCase):
             cfg.list_outputs(),
             {'ocupado.output.test': {
                 'class': 'Test',
-                'kwargs': {'key': 'value'}}})
+                'kwargs': {'key': ['value', 'value2']}}})
 
     def test_ini_config_get_authoritative(self):
         cfg = INIConfig('conf/test.ini')
