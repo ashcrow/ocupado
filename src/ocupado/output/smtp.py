@@ -32,7 +32,13 @@ class SMTP(Output):
 
         :param list usernames: list of usernames which do not match.
         """
-        msg = "The following usernames could not be found: %s" % usernames
+        msg = (
+            'From: %s\nSubject: Unmatched users\n\nThe following usernames '
+            'could not be found: %s' % (self._conf['smtpfrom'], usernames))
+        if type(self._conf['smtpto']) != list:
+            self._conf['smtpto'] = list(self._conf['smtpto'])
+
         server = smtplib.SMTP(self._conf['smtphost'])
-        server.sendmail(self._conf['smtpfrom'], self._conf['smtpto'], msg)
+        for to_addr in self._conf['smtpto']:
+            server.sendmail(self._conf['smtpfrom'], to_addr, msg)
         server.quit()
