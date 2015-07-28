@@ -94,4 +94,11 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except:
+        import sys
+        err = sys.exc_info()[1]
+        sys.stdout.write('- Exiting due to error. (%s)\n' % err)
+        raise SystemExit(1)
+    raise SystemExit(0)
