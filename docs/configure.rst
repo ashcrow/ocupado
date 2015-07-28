@@ -49,6 +49,24 @@ And there is also one optional section:
    ignorethisonetoo =
    # ...
 
+
+INI Extras
+----------
+
+Python's ``ConfigParser`` doesn't support accepting lists. To get around this
+the INI plugin accepts comma seperated items and parses them to a list.
+
+.. code-block:: ini
+
+   [ocupado.output.smtp]
+   # ...
+   smtpto = me@example.org,you@example.org
+   # Parses to ['me@example.org', 'you@example.org']
+
+
+INI Example
+-----------
+
 Check out this `simple example <https://github.com/ashcrow/ocupado/blob/master/conf/test.ini>`_ for
 a complete config using the test plugins.
 
