@@ -28,7 +28,7 @@ The traditional way to install Python code is via the ``setup.py`` command that 
 
 Adding Plugins
 ==============
-On it's own ``ocupado`` doesn't do much more than provide a framework for user data sources.
+On its own ``ocupado`` doesn't do much more than provide a framework for user data sources.
 Installing plugins allows for integration with external data sources. Using either the
 above ``pip`` or ``traditional`` method of installtion should work for the following plugins:
 

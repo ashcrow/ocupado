@@ -21,7 +21,7 @@ Each uses the same format and expects a list of ``module = class`` like so:
    my.plugin.module = PluginClass
    another.plugin.module = AnotherClass
 
-Each ``module = class`` is configured with it's *own section* using the the module as the
+Each ``module = class`` is configured with its *own section* using the the module as the
 section name. This section takes ``key = value`` pairs which will be passed to a plugin's
 ``__init__``. For instance, to configure ``my.plugin.module = PluginClass`` above:
 
