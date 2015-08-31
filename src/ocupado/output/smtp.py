@@ -32,9 +32,14 @@ class SMTP(Output):
 
         :param list usernames: list of usernames which do not match.
         """
+        # Get or use a default subject and ensure no newlines are allowed
+        subject = self._conf.get(
+            'smtpsubject', 'Unmatched users').replace(
+                '\n', '').replace(':', '')
         msg = (
-            'From: %s\nSubject: Unmatched users\n\nThe following usernames '
-            'could not be found: %s' % (self._conf['smtpfrom'], usernames))
+            'From: %s\nSubject: %s\n\nThe following usernames '
+            'could not be found: %s' % (
+                self._conf['smtpfrom'], subject, usernames))
         if type(self._conf['smtpto']) != list:
             self._conf['smtpto'] = list(self._conf['smtpto'])
 

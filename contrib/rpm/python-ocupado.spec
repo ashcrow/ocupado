@@ -3,7 +3,7 @@
 %{!?python2_sitelib: %global python2_sitelib %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
 
 Name:           python-ocupado
-Version:        0.0.1
+Version:        0.0.2
 Release:        1%{?dist}
 Summary:        Plug-in based user checking tool
 
@@ -45,5 +45,9 @@ popd
 %{_bindir}/ocupado
 
 %changelog
+* Mon Aug 31 2015 Steve Milner <stevem@gnulinux.net> - 0.0.2-1
+- smtp_subject support added.
+- Enhanced unittesting.
+
 * Wed Jul 22 2015 Steve Milner <stevem@gnulinux.net> - 0.0.1-1
 - Initial spec.

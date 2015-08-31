@@ -26,6 +26,7 @@ from ocupado.output.smtp import SMTP
 class TestOutputSMTP(unittest.TestCase):
 
     def test_output_smtp__init(self):
+        # Without smtpsubject
         smtp = SMTP(
             smtphost='localhost',
             smtpfrom='noreply@example.com',
@@ -34,6 +35,18 @@ class TestOutputSMTP(unittest.TestCase):
             'smtphost': 'localhost',
             'smtpfrom': 'noreply@example.com',
             'smtpto': ['admin@example.com']})
+
+        # With smtpsubject
+        smtp = SMTP(
+            smtphost='localhost',
+            smtpfrom='noreply@example.com',
+            smtpto=['admin@example.com'],
+            smtpsubject='My subject')
+        self.assertEquals(smtp._conf, {
+            'smtphost': 'localhost',
+            'smtpfrom': 'noreply@example.com',
+            'smtpto': ['admin@example.com'],
+            'smtpsubject': 'My subject'})
 
     def test_output_smtp_notify(self):
         with mock.patch("smtplib.SMTP") as _smtp:
@@ -44,4 +57,43 @@ class TestOutputSMTP(unittest.TestCase):
             # No return is no error
             self.assertEquals(smtp.notify(['someone@example.org']), None)
             self.assertEquals(_smtp().sendmail.call_count, 1)
+            self.assertEquals(
+                _smtp().sendmail.call_args[0][2], (
+                    "From: noreply@example.com\nSubject: Unmatched users\n\n"
+                    "The following usernames could not be found: "
+                    "['someone@example.org']"))
+            self.assertEquals(_smtp().quit.call_count, 1)
+
+    def test_output_smtp_notify_with_subject(self):
+        with mock.patch("smtplib.SMTP") as _smtp:
+            smtp = SMTP(
+                smtphost='localhost',
+                smtpfrom='noreply@example.com',
+                smtpto=['admin@example.com'],
+                smtpsubject='\n \nNewlines\n\n')
+            # No return is no error
+            self.assertEquals(smtp.notify(['someone@example.org']), None)
+            self.assertEquals(_smtp().sendmail.call_count, 1)
+            self.assertEquals(
+                _smtp().sendmail.call_args[0][2], (
+                    "From: noreply@example.com\nSubject:  Newlines\n\n"
+                    "The following usernames could not be found: "
+                    "['someone@example.org']"))
+            self.assertEquals(_smtp().quit.call_count, 1)
+
+    def test_output_smtp_notify_with_subject_colon(self):
+        with mock.patch("smtplib.SMTP") as _smtp:
+            smtp = SMTP(
+                smtphost='localhost',
+                smtpfrom='noreply@example.com',
+                smtpto=['admin@example.com'],
+                smtpsubject=':Colon:')
+            # No return is no error
+            self.assertEquals(smtp.notify(['someone@example.org']), None)
+            self.assertEquals(_smtp().sendmail.call_count, 1)
+            self.assertEquals(
+                _smtp().sendmail.call_args[0][2], (
+                    "From: noreply@example.com\nSubject: Colon\n\n"
+                    "The following usernames could not be found: "
+                    "['someone@example.org']"))
             self.assertEquals(_smtp().quit.call_count, 1)

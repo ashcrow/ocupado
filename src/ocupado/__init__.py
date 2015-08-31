@@ -16,7 +16,7 @@
 Pluggable CLI tool that checks external accounts with an internal source
 """
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 
 class PluginManager:

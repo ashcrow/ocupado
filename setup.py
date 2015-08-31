@@ -24,7 +24,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='ocupado',
-    version='0.0.1',
+    version='0.0.2',
     description=('Pluggable CLI tool that checks external accounts'
                  ' with an internal source'),
     author='See AUTHORS',
