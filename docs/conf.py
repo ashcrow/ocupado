@@ -80,10 +80,13 @@ latex_elements = {
     # 'figure_align': 'htbp',
 }
 
-latex_documents = [
-  (master_doc, 'ocupado.tex', u'ocupado Documentation',
-   u'Steve Milner', 'manual'),
-]
+latex_documents = [(
+    master_doc,
+    'ocupado.tex',
+    u'ocupado Documentation',
+    u'Steve Milner',
+    'manual'
+)]
 
 # latex_logo = None
 # latex_use_parts = False
@@ -99,11 +102,15 @@ man_pages = [
 
 # man_show_urls = False
 
-texinfo_documents = [
-  (master_doc, 'ocupado', u'ocupado Documentation',
-   author, 'ocupado', 'One line description of project.',
-   'Miscellaneous'),
-]
+texinfo_documents = [(
+    master_doc,
+    'ocupado',
+    u'ocupado Documentation',
+    author,
+    'ocupado',
+    'One line description of project.',
+    'Miscellaneous'
+)]
 
 # texinfo_appendices = []
 # texinfo_domain_indices = True
