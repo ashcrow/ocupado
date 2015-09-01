@@ -30,6 +30,7 @@ class _Config:
         """
         self._location = location
         self._ignored_users = []
+        self._user_equate_mapping = {}
 
     def reload(self):
         """
@@ -86,6 +87,18 @@ class _Config:
         """
         self._ignored_users.append(userid)
 
+    def load_equate_users(self):
+        """
+        Loads equate users from a config.
+        """
+        raise NotImplementedError('load_equate_users() must be implemented')
+
+    def user_equate(self, username):
+        """
+        Returns a different username if the username equates to another name.
+        """
+        return self._user_equate_mapping.get(username, username)
+
     # Read-only properties
     #: Property listing all ignored users
     ignored_users = property(lambda s: s._ignored_users)
@@ -95,3 +108,5 @@ class _Config:
     outputs = property(lambda s: s.list_outputs())
     #: Property showing the authoritative plugin.
     authoritative = property(lambda s: s.get_authoritative())
+    #: Property listing equate user mapping
+    user_equate_mapping = property(lambda s: s._user_rquate_mapping)

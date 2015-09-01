@@ -63,4 +63,4 @@ class Test(Plugin):
         :return: A list of all users known to the backend.
         :rtype: list
         """
-        return ['test', 'example']
+        return ['test', 'example', 'alias']

@@ -43,6 +43,7 @@ def main():
 
     conf = INIConfig(args.config[0])
     conf.load_ignored_users()
+    conf.load_equate_users()
 
     # Load plugins for use
     plugin_manager = PluginManager()
@@ -65,15 +66,21 @@ def main():
         if args.verbose:
             print('- Getting users for plugin %s' % name)
         for username in plugin_manager.instances[name].get_all_usernames():
-            if username not in conf.ignored_users:
+            real_username = conf.user_equate(username)
+            if real_username != username and args.verbose:
+                print('- Username %s equates to %s' % (
+                    username, real_username))
+
+            if (username not in conf.ignored_users and
+                    real_username not in conf.ignored_users):
                 exists, details = plugin_manager.authoritative_instance.exists(
-                    username)
+                    real_username)
                 if exists is False:
                     if args.verbose:
                         print(
                             '- Could not find user %s in the authoritative '
-                            'plugin' % username)
-                    unmatched.append(username)
+                            'plugin' % real_username)
+                    unmatched.append(real_username)
             else:
                 if args.verbose:
                     print(

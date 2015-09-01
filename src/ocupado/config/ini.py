@@ -114,3 +114,11 @@ class INIConfig(_Config):
         if self._cp.has_section('ignored_users'):
             for userid, _ in self._cp.items('ignored_users'):
                 self.ignore_user(userid)
+
+    def load_equate_users(self):
+        """
+        Loads equate users from a config.
+        """
+        if self._cp.has_section('equate_users'):
+            for userid, realid in self._cp.items('equate_users'):
+                self._user_equate_mapping[userid] = realid

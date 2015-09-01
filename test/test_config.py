@@ -65,3 +65,14 @@ class TestINIConfig(unittest.TestCase):
         cfg._cp.remove_section('ignored_users')
         self.assertIsNone(cfg.load_ignored_users())
         self.assertEquals(cfg.ignored_users, [])
+
+    def test_ini_config_load_equate_users(self):
+        cfg = INIConfig('conf/test.ini')
+        self.assertIsNone(cfg.load_equate_users())
+        self.assertEquals(cfg._user_equate_mapping, {'alias': 'test'})
+
+    def test_ini_config_load_equate_users_with_no_section(self):
+        cfg = INIConfig('conf/test.ini')
+        cfg._cp.remove_section('equate_users')
+        self.assertIsNone(cfg.load_equate_users())
+        self.assertEquals(cfg._user_equate_mapping, {})
